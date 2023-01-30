@@ -1,27 +1,14 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-button',
-  templateUrl: './button.component.html',
-  styleUrls: ['./button.component.css'],
+  template: `
+  <button class="btn btn-primary" >{{label}}</button>
+  `,
+  styleUrls: ['./button.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ButtonComponent implements OnChanges, OnInit, OnDestroy {
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('Changes ->', changes);
-  }
-  ngOnInit(): void {
-    console.log('OnInit');
-  }
-  ngOnDestroy(): void {
-    console.log('OnDestroy');
-  }
-  @Input() color!: string;
-  @Input() label!: string;
+export class ButtonComponent {
+  @Input() label !: string;
+
 }

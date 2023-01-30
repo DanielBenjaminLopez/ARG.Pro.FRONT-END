@@ -1,17 +1,30 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 @Component({
   selector: 'app-form-new-item',
   templateUrl: './form-new-item.component.html',
-  styleUrls: ['./form-new-item.component.css'],
+  styleUrls: ['./form-new-item.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FormNewItemComponent {
-  @Input() label!: string;
   @Input() className = 'btn-primary';
-  @Output() newItemEvent=new EventEmitter<string>()
+  @Input() label!: string;
+
+  @Output() newItemEvent = new EventEmitter<string>();
 
   onAddNewItem(item: string): void {
-    console.log('item ->', item);
-    this.newItemEvent.emit(item)
+    console.log('Item ->', item);
+    this.newItemEvent.emit(item);
+  }
+
+  counterRender(): boolean {
+    console.group('RENDER');
+    return true;
   }
 }

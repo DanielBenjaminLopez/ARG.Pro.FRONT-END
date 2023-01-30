@@ -1,27 +1,23 @@
-import {
-  Component,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  SimpleChange,
-} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'Portafolio';
-
-  cities = ['Corrientes', 'Salta', 'Buenos Aires', 'Misiones', 'Santa Fe'];
-  portada =
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIgeYD_L_QfrfKoMBesOrRlMXkVZPmn9R0mg&usqp=CAU';
+  cities = ['Barcelona', 'Madrid', 'Lima', 'Quito'];
+  name!: string;
   selection!: string;
-  nombre = 'ejemplo';
+  criteria = '';
+  title = 'Día 12 del reto';
+  url =
+    'https://carconfigurator.ferrari.com/assets/cars/portofinom/packages/default/car-ferrari-portofino-m_splash.jpg';
 
+  addNewCity(city: string): void {
+    this.cities.push(city);
+  }
   onCityClicked(city: string): void {
-    console.log('City ->', city);
     this.selection = city;
   }
 
@@ -29,7 +25,7 @@ export class AppComponent {
     this.selection = '';
   }
 
-  addNewCity(city: string): void {
-    this.cities.push(city);
+  onSearch(): void {
+    console.log('OnSearch');
   }
 }
