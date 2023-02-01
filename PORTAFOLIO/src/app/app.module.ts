@@ -9,6 +9,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterPipe } from './pipes/filter.pipe';
 import { ContactComponent } from './contact/contact.component';
 import { ContactReactiveComponent } from './contact-reactive/contact-reactive.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { PresentacionComponent } from './presentacion/presentacion.component';
+import { EducacionComponent } from './educacion/educacion.component';
+import { ProyectosComponent } from './proyectos/proyectos.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +24,11 @@ import { ContactReactiveComponent } from './contact-reactive/contact-reactive.co
     FilterPipe,
     ContactComponent,
     ContactReactiveComponent,
+    NavbarComponent,
+    PerfilComponent,
+    PresentacionComponent,
+    EducacionComponent,
+    ProyectosComponent,
   ],
   imports: [BrowserModule, FormsModule, ReactiveFormsModule],
   providers: [],
